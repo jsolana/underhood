@@ -1,0 +1,8 @@
+import type { ConceptViewProps } from '@/engine/simulation/concept'
+import { ArrayView } from '@/primitives'
+import type { __NAME__Input, __NAME__State } from './simulation'
+
+/** Compose existing primitives from src/primitives; add a new primitive only if none fits. */
+export function __NAME__View({ state }: ConceptViewProps<__NAME__State, __NAME__Input>) {
+  return <ArrayView items={state.items} idPrefix="cell" label="items" />
+}

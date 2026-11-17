@@ -1,0 +1,11 @@
+import { parseAnnotatedSource } from '@/utils/annotatedSource'
+
+/** Steps reference lines by `// @label`, never by number. */
+export const listing = parseAnnotatedSource(`function example(items, target) {
+  for (const x of items) {   // @scan
+    if (x === target) return x // @hit
+  }
+  return undefined           // @miss
+}
+`)
+export const CODE = listing.source

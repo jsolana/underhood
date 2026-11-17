@@ -1,0 +1,10 @@
+import { describe, expect, it } from 'vitest'
+import { __NAME__Simulation } from './simulation'
+
+// Domain tests: assert the *real* behaviour of the concept (not just that steps exist).
+describe('__TITLE__ simulation', () => {
+  it('finds the target', () => {
+    const steps = __NAME__Simulation.run({ items: [1, 2, 3], target: 2 })
+    expect(steps.at(-1)!.output).toBe('match')
+  })
+})
