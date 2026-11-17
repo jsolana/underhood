@@ -9,7 +9,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "new-concept": "node scripts/new-concept.mjs"
+    "new-concept": "node scripts/new-concept.mjs",
+    "preview": "vite preview",
+    "logo": "node scripts/make-logo.mjs"
   },
   "dependencies": {
     "motion": "^14.14.0",
