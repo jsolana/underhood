@@ -1,0 +1,7 @@
+import type { Preset } from '@/engine/simulation/concept'
+import type { __NAME__Input } from './simulation'
+
+export const presets: Preset<__NAME__Input>[] = [
+  { id: 'basic', label: 'Basic', input: { items: [4, 8, 15, 16, 23], target: 15 } },
+  { id: 'miss', label: 'Edge case: absent', edgeCase: true, input: { items: [1, 2, 3], target: 9 } },
+]

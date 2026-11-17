@@ -1,0 +1,35 @@
+import { StepRecorder, type Simulation } from '@/engine/simulation/types'
+import { listing } from './code'
+
+export interface __NAME__Input {
+  items: number[]
+  target: number
+}
+export interface __NAME__State {
+  items: number[]
+  cursor: number | null
+}
+
+/** TODO(concept) replace with the real domain model; keep run() pure and deterministic. */
+export const __NAME__Simulation: Simulation<__NAME__State, __NAME__Input> = {
+  run({ items, target }) {
+    const rec = new StepRecorder<__NAME__State>({ items, cursor: null })
+    for (let i = 0; i < items.length; i++) {
+      const hit = items[i] === target
+      rec.push(
+        {
+          title: `Inspect index ${i}`,
+          explanation: `Compare ${items[i]} with ${target}.`,
+          why: 'TODO(concept)',
+          input: `items[${i}]=${items[i]}, target=${target}`,
+          output: hit ? 'match' : 'no match',
+          highlights: [{ target: `cell:${i}`, role: hit ? 'match' : 'active' }],
+          code: { lines: listing.line(hit ? 'hit' : 'scan') },
+        },
+        { items, cursor: i },
+      )
+      if (hit) break
+    }
+    return rec.build()
+  },
+}

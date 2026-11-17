@@ -1,0 +1,33 @@
+import { defineConcept } from '@/engine/simulation/concept'
+import { CODE } from './code'
+import { presets } from './presets'
+import { __NAME__Simulation, type __NAME__Input, type __NAME__State } from './simulation'
+import { __NAME__View } from './View'
+
+export default defineConcept<__NAME__State, __NAME__Input>({
+  meta: {
+    id: '__ID__',
+    title: '__TITLE__',
+    summary: 'TODO(concept) one-sentence summary',
+    category: ['TODO(concept) Category'],
+    difficulty: 'intermediate',
+    prerequisites: [],
+    related: [],
+    tags: [],
+  },
+  objectives: ['TODO(concept) what the learner can do afterwards'],
+  sections: [
+    { id: 'introduction', title: 'Introduction', body: ['TODO(concept)'] },
+    { id: 'mental-model', title: 'Mental model', body: ['TODO(concept)'] },
+    { id: 'architecture', title: 'Internal architecture', body: ['TODO(concept)'] },
+    { id: 'edge-cases', title: 'Edge cases', body: ['TODO(concept)'] },
+    { id: 'complexity', title: 'Complexity', body: ['TODO(concept)'] },
+    { id: 'applications', title: 'Practical applications', body: ['TODO(concept)'] },
+  ],
+  assumptions: ['TODO(concept) every simplification / implementation-specific detail'],
+  references: [{ title: 'TODO(concept) real source', url: 'https://example.com', kind: 'docs', supports: 'TODO(concept)' }],
+  simulation: __NAME__Simulation,
+  presets,
+  code: { language: 'typescript', source: CODE },
+  View: __NAME__View,
+})
